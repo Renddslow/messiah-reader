@@ -1,17 +1,30 @@
 {
   "devDependencies": {
     "@dmsi/prettier-config": "^1.3.0",
+    "autoprefixer": "^10.4.13",
     "esbuild": "^0.17.8",
+    "globby": "^11.1.0",
+    "gray-matter": "^4.0.3",
     "mri": "^1.2.0",
     "netlify-cli": "^12.12.1",
-    "prettier": "^2.8.4"
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "prettier": "^2.8.4",
+    "watchlist": "^0.3.1"
   },
   "prettier": "@dmsi/prettier-config",
   "dependencies": {
     "@netlify/functions": "^1.4.0",
-    "lit": "^2.6.1"
+    "clean-css-cli": "^5.6.2",
+    "ejs": "^3.1.8",
+    "grey-matter": "^0.0.0"
   },
   "scripts": {
-    "start": "netlify dev"
+    "start": "netlify dev",
+    "autoprefix": "postcss public/*.css --use autoprefixer -d public",
+    "build": "run-s autoprefix build:*",
+    "build:css": "cleancss -o public/styles.min.css public/styles.css",
+    "build:fold": "cleancss -o fold.min.css public/above-the-fold.css"
   }
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Messiah Reader | Flatland Church</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+    /></noscript>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+          'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #1d1b82;
+        --white: #f4f4f8;
+        --dark-blue: #16145b;
+        --accent-blue: #8082e1;
+        --gold: #e2c044;
+        --bright-gold: #f2c218;
+      }
+      <%- inlineCSS %>
+    </style>
+    <link
+      rel="preload"
+      href="/styles.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/styles.min.css" /></noscript>
+  </head>
+  <body <% if (isBlue) { %>
+    class="blue"<% } %>>
+    <div id="wrapper"><%- slot %></div>
+    <script async>
+      (() => {
+        // defer image loading until after page load
+        const images = document.querySelectorAll('img[data-src]');
+        Promise.all(
+          Array.from(images).map(async (img) => {
+            await fetch(img.dataset.src);
+            img.src = img.dataset.src;
+          }),
+        );
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "The Promise",
+    "unlocks": "2023-02-11T00:00:00.000-06:00",
+    "unlocksFriendly": "February 19"
+  },
+  {
+    "id": 2,
+    "title": "The Priest",
+    "unlocks": "2023-02-26T00:00:00.000-06:00",
+    "unlocksFriendly": "February 26"
+  },
+  {
+    "id": 3,
+    "title": "The King",
+    "unlocks": "2023-03-05T00:00:00.000-06:00",
+    "unlocksFriendly": "March 5"
+  },
+  {
+    "id": 4,
+    "title": "The Servant",
+    "unlocks": "2023-03-12T00:00:00.000-06:00",
+    "unlocksFriendly": "March 12"
+  },
+  {
+    "id": 5,
+    "title": "The Son of Man",
+    "unlocks": "2023-03-19T00:00:00.000-06:00",
+    "unlocksFriendly": "March 19"
+  },
+  {
+    "id": 6,
+    "title": "The Lord",
+    "unlocks": "2023-03-26T00:00:00.000-06:00",
+    "unlocksFriendly": "March 26"
+  }
+]

@@ -4,7 +4,7 @@ command="yarn build"
 
 [functions]
 directory="functions/"
-included_files=["templates/**"]
+included_files=["templates/**", "weeks.json", "pages.json", "fold.min.css"]
 
 [[redirects]]
 from="/auth"
@@ -22,16 +22,11 @@ to="/.netlify/functions/user"
 status=200
 
 [[redirects]]
-from="/api/links"
-to="/.netlify/functions/link"
-status=200
-
-[[redirects]]
 from="/api/completions"
 to="/.netlify/functions/complete"
 status=200
 
 [[redirects]]
-from="/*"
-to="/index.html"
+from="/read"
+to="/.netlify/functions/serve-list"
 status=200

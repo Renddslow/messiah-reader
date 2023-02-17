@@ -1,6 +1,7 @@
 node_modules
 .env
-public
+public/read
 .idea
 # Local Netlify folder
 .netlify
+*.min.css

@@ -1,0 +1,10 @@
+<div class="week<% if (!week.unlocked) { %> locked<% } %>" id="week-<%= week.id %>">
+  <p>Week <%= week.id %></p>
+  <h2><%= week.title %></h2>
+  <% if (!week.unlocked) { %>
+  <p>Unlocks on <%= week.unlocksFriendly %></p>
+  <% } %>
+</div>
+<% if (week.unlocked) { %>
+<div class="pages"><%- slot %></div>
+<% } %>
