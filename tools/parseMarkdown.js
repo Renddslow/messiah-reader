@@ -26,7 +26,11 @@ const parseMarkdown = async (file) => {
           return render(block.type, block);
         }
         const content = await Promise.all(
-          block.children.map((child) => {
+          block.children.map(async (child) => {
+            if (child.children) {
+              const children = await Promise.all(child.children.map((c) => render(c.type, c)));
+              return render(child.type, { content: children.join(' ') });
+            }
             return render(child.type, child);
           }),
         );
@@ -35,6 +39,11 @@ const parseMarkdown = async (file) => {
       }),
     )
   ).join('\n');
+
+  return {
+    ...file,
+    content: rendered,
+  };
 };
 
 module.exports = parseMarkdown;
