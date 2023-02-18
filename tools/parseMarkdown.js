@@ -29,7 +29,7 @@ const parseMarkdown = async (file) => {
           block.children.map(async (child) => {
             if (child.children) {
               const children = await Promise.all(child.children.map((c) => render(c.type, c)));
-              return render(child.type, { content: children.join(' ') });
+              return render(child.type, { ...child, content: children.join(' ') });
             }
             return render(child.type, child);
           }),

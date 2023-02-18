@@ -32,6 +32,7 @@ const parseTokensToNodes =
         nodes.push({
           type: 'poetry_line',
           content: token.replace(/^>+\s/, ''),
+          indent: token.match(/^>+/)[0].length,
         });
         continue;
       }

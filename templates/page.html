@@ -1,0 +1,18 @@
+<header>
+  <a href="/read">Home</a>
+  <p id="completion" class="loading">Loading Completion</p>
+</header>
+<div class="content"><%- slot %></div>
+<footer>
+  <form method="post" action="/complete?id=<%= data.id %>&lastPage=<%= data.lastPageOfWeek %>">
+    <% if (data.lastPageOfWeek) { %>
+    <button type="submit">Complete Page</button>
+    <% } else { %>
+    <button type="submit">Next Page</button>
+    <% } %>
+  </form>
+  <p class="copyright">
+    Scripture quotations are from the <em>Lexham English Bible</em>. Copyright 2012 Logos Bible
+    Software. Lexham is a registered trademark of Logos Bible Software.
+  </p>
+</footer>

@@ -1,3 +1,4 @@
 ---
 title: Introduction
+lastPageOfWeek: true
 ---

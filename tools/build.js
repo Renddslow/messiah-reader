@@ -35,8 +35,10 @@ const saveFile = async (file) => {
 
 const wrapFile = async (file) => {
   const template = await fs.readFile('templates/baseof.html', 'utf-8');
+  const page = await fs.readFile('templates/page.html', 'utf-8');
   const inlineCSS = await fs.readFile('fold.min.css', 'utf-8');
-  file.content = render(template, { slot: file.content, inlineCSS, isBlue: false });
+  const pageContent = render(page, { slot: file.content, data: file.data });
+  file.content = render(template, { slot: pageContent, inlineCSS, isBlue: false });
   return file;
 };
 
