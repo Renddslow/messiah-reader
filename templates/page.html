@@ -6,7 +6,7 @@
 <footer>
   <form method="post" action="/complete?id=<%= data.id %>&lastPage=<%= data.lastPageOfWeek %>">
     <% if (data.lastPageOfWeek) { %>
-    <button type="submit">Complete Page</button>
+    <button type="submit">Mark as Read</button>
     <% } else { %>
     <button type="submit">Next Page</button>
     <% } %>
