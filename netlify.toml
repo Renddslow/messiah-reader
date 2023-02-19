@@ -17,6 +17,11 @@ to="/.netlify/functions/complete"
 status=200
 
 [[redirects]]
+from="/api/progress"
+to="/.netlify/functions/progress"
+status=200
+
+[[redirects]]
 from="/api/login"
 to="/.netlify/functions/login"
 status=200
