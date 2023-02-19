@@ -18,6 +18,13 @@ const tokenizeMarkdownBlock = (value) => {
       continue;
     }
 
+    if (/\?/.test(char) && /\[/.test(value[i + 1])) {
+      const token = value.slice(i).trim();
+      tokens.push(token);
+      i += token.length;
+      continue;
+    }
+
     if (/\[/.test(char) && /\[/.test(value[i + 1])) {
       i += 1;
       string = '[[';

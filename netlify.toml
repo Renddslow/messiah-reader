@@ -12,21 +12,21 @@ to="/.netlify/functions/auth"
 status=200
 
 [[redirects]]
-from="/api/profile"
-to="/.netlify/functions/profile"
-status=200
-
-[[redirects]]
-from="/api/user"
-to="/.netlify/functions/user"
-status=200
-
-[[redirects]]
-from="/api/completions"
+from="/api/complete"
 to="/.netlify/functions/complete"
+status=200
+
+[[redirects]]
+from="/api/login"
+to="/.netlify/functions/login"
 status=200
 
 [[redirects]]
 from="/read"
 to="/.netlify/functions/serve-list"
+status=200
+
+[[redirects]]
+from="/"
+to="/.netlify/functions/cookie-tester"
 status=200

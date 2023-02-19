@@ -3,9 +3,7 @@ title: Introduction
 lastPageOfWeek: true
 ---
 
-Welcome to our reader.
-
-Throughout this sermon series we're exploring the Bible as a unified story that leads to Jesus through six core identities and vocations of Christ.
+Welcome! Throughout this sermon series we're exploring the Bible as a unified story that leads to Jesus through six core identities and vocations of Christ.
 
 In this introduction we want to introduce to a few concepts that have informed the way this reader will work. You'll watch a few videos and read about how we put this together and what we hope for you to learn.
 

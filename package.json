@@ -17,9 +17,15 @@
   "prettier": "@dmsi/prettier-config",
   "dependencies": {
     "@netlify/functions": "^1.4.0",
+    "@sendgrid/mail": "^7.7.0",
+    "await-to-js": "^3.0.0",
     "clean-css-cli": "^5.6.2",
+    "cookie": "^0.5.0",
     "ejs": "^3.1.8",
-    "grey-matter": "^0.0.0"
+    "faunadb": "^4.8.0",
+    "grey-matter": "^0.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "qs": "^6.11.0"
   },
   "scripts": {
     "start": "netlify dev",

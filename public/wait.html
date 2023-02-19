@@ -39,15 +39,52 @@
         --gold: #e2c044;
         --bright-gold: #f2c218;
       }
-      <%- inlineCSS %>
+      body,
+      html {
+        height: 100%;
+      }
+      #wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 24px;
+      }
+      body.blue {
+        background: var(--bg);
+      }
+      .header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        justify-content: center;
+        grid-gap: 24px;
+        padding: 48px 0 24px;
+        overflow: hidden;
+      }
+      .header h1 {
+        font-size: 48px;
+        color: var(--bright-gold);
+        font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+        font-weight: 300;
+        text-align: left;
+        line-height: 0.85;
+        letter-spacing: 0.02em;
+      }
+      .header p {
+        color: var(--white);
+      }
+      .header p:first-child {
+        text-align: center;
+      }
+      .card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 12px;
+        padding: 24px;
+        background: var(--white);
+        border-radius: 8px;
+      }
     </style>
-    <link
-      rel="preload"
-      href="/styles.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="/styles.min.css" /></noscript>
     <script type="text/javascript">
       (function (f, b) {
         if (!b.__SV) {
@@ -118,20 +155,19 @@
       mixpanel.init('2625155e3e82bfc0bb3aeb2e10a9c207');
     </script>
   </head>
-  <body <% if (isBlue) { %>
-    class="blue"<% } %>>
-    <div id="wrapper"><%- slot %></div>
-    <script async>
-      (() => {
-        // defer image loading until after page load
-        const images = document.querySelectorAll('img[data-src]');
-        Promise.all(
-          Array.from(images).map(async (img) => {
-            await fetch(img.dataset.src);
-            img.src = img.dataset.src;
-          }),
-        );
-      })();
-    </script>
+  <body class="blue">
+    <div id="wrapper">
+      <div class="header">
+        <p>Flatland Church</p>
+        <h1>Messiah Reader</h1>
+        <p>
+          Read along with us on a six-week journey as we discover how the Bible is a unified story
+          that leads to the Messiah in Jesus.
+        </p>
+      </div>
+      <div class="card">
+        <p>Thank you! A magic sign in link is on its way to your inbox. Keep at it!</p>
+      </div>
+    </div>
   </body>
 </html>

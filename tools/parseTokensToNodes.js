@@ -37,6 +37,17 @@ const parseTokensToNodes =
         continue;
       }
 
+      const embedRegexpr = /^\?\[(.*?)]\((.*?)\)$/;
+      if (embedRegexpr.test(token)) {
+        const [, title, id] = embedRegexpr.exec(token);
+        nodes.push({
+          type: 'video',
+          content: id,
+          title,
+        });
+        continue;
+      }
+
       if (/^\[\[/.test(token)) {
         const [, link] = token.exec(/^\[\[(.*?)]]$/);
         const [data, label, id] = link.split('|').map((t) => t.trim());
