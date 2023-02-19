@@ -133,5 +133,15 @@
         );
       })();
     </script>
+    <script>
+      (() => {
+        fetch('/api/progress')
+          .then((d) => d.json())
+          .then((d) => {
+            window.userProgress = d;
+            window.dispatchEvent(new CustomEvent('userProgressLoaded'));
+          });
+      })();
+    </script>
   </body>
 </html>

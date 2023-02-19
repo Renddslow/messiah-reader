@@ -16,3 +16,10 @@
     Software. Lexham is a registered trademark of Logos Bible Software.
   </p>
 </footer>
+<script>
+  window.addEventListener('userProgressLoaded', () => {
+    const completion = document.getElementById('completion');
+    completion.classList.remove('loading');
+    completion.innerText = `Read ${window.userProgress.completions.length}/9`;
+  });
+</script>

@@ -101,3 +101,5 @@ const handler: Handler = async (event) => {
 
   return Promise.resolve(response);
 };
+
+export { handler };

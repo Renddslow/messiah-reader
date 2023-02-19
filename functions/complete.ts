@@ -117,7 +117,6 @@ const handler: Handler = async (event) => {
 
   await client.query(q.Create(q.Collection('completions'), { data: payload }));
 
-  response.body = JSON.stringify(payload);
   response.headers = {
     Location: lastPage === 'true' ? '/read' : `/read/${page + 1}`,
   };
