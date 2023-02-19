@@ -142,10 +142,10 @@
             window.dispatchEvent(new CustomEvent('userProgressLoaded'));
             window.mixpanel.identify(d.id);
             window.mixpanel.people.set({
-              $first_name: d.first_name,
-              $last_name: d.last_name,
-              $distinct_id: d.id,
-              $email: d.email,
+              $first_name: d.user.firstName,
+              $last_name: d.user.lastName,
+              $distinct_id: d.user.id,
+              $email: d.user.email,
             });
           });
       })();
