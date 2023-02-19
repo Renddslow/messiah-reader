@@ -140,8 +140,29 @@
           .then((d) => {
             window.userProgress = d;
             window.dispatchEvent(new CustomEvent('userProgressLoaded'));
+            window.mixpanel.identify(d.id);
+            window.mixpanel.people.set({
+              $first_name: d.first_name,
+              $last_name: d.last_name,
+              $distinct_id: d.id,
+              $email: d.email,
+            });
           });
       })();
+    </script>
+    <script>
+      window.addEventListener('turbo:click', (e) => {
+        window.mixpanel.track('Page Opened', {
+          page: e.detail.url,
+        });
+      });
+    </script>
+    <script>
+      window.addEventListener('submit-start', () => {
+        window.mixpanel.track('Page Completed', {
+          page: window.location.href,
+        });
+      });
     </script>
   </body>
 </html>
