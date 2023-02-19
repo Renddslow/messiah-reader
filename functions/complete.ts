@@ -118,7 +118,7 @@ const handler: Handler = async (event) => {
   await client.query(q.Create(q.Collection('completions'), { data: payload }));
 
   response.headers = {
-    Location: lastPage === 'true' ? '/read' : `/read/${page + 1}`,
+    Location: lastPage === 'true' ? 'https://messiah.flatland.church/read' : `/read/${page + 1}`,
   };
   response.statusCode = 302;
   return Promise.resolve(response);
