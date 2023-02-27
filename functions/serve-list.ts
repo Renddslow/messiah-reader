@@ -29,6 +29,12 @@ const handler: Handler = async () => {
   const page = fs.readFileSync(path.join(__dirname, '..', 'templates/page-list-item.html'), 'utf8');
   const home = fs.readFileSync(path.join(__dirname, '..', 'templates/home.html'), 'utf8');
 
+  const pageData = JSON.parse(pages).map((p, idx) => ({
+    ...p,
+    id: idx + 1,
+    friendlyId: (idx + 1).toString().padStart(2, '0'),
+  }));
+
   const weeksList = JSON.parse(weeks)
     .map(
       (week: Partial<Week>): Week => ({
@@ -39,15 +45,11 @@ const handler: Handler = async () => {
     .map((week: Week) =>
       render(list, {
         week,
-        slot: JSON.parse(pages)
+        slot: pageData
           .filter((p: Page) => p.week === week.id)
-          .map((p: Page, idx) =>
+          .map((p: Page) =>
             render(page, {
-              page: {
-                ...p,
-                id: idx + 1,
-                friendlyId: (idx + 1).toString().padStart(2, '0'),
-              },
+              page: p,
             }),
           )
           .join('\n'),
